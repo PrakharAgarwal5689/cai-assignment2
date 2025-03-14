@@ -23,7 +23,7 @@ def load_and_preprocess_data(csv_file):
     return df
 
 # Load financial data & pre-process
-csv_file = "/Users/prakharagrawal/Downloads/Financial_Statements.csv"  # Change this path if needed
+csv_file = "Financial_Statements.csv"  # Change this path if needed
 data = load_and_preprocess_data(csv_file)
 
 # Convert each row into a textual representation
