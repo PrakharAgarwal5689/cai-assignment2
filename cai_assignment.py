@@ -84,7 +84,7 @@ def rerank_documents(query, documents):
     
     # Normalize scores to a 0–100 range
     min_score, max_score = min(scores), max(scores)
-    #st.write(f"\n**min_score :** {min_score}  \n**max_score :** {max_score} \n**scores: **{scores}% scores")
+    st.write(f"\n**min_score :** {min_score}  \n**max_score :** {max_score} \n**scores: **{scores}% scores")
 
     confidence_scores = [(s - min_score) / (max_score - min_score) * 100 if max_score > min_score else 50 for s in scores]
     
