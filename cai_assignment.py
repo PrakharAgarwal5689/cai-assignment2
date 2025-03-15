@@ -86,7 +86,11 @@ def rerank_documents(query, documents):
     min_score, max_score = min(scores), max(scores)
     st.write(f"\n**min_score :** {min_score}  \n**max_score :** {max_score} \n**scores: **{scores}% scores")
 
-    confidence_scores = [(s - min_score) / (max_score - min_score) * 100 if max_score > min_score else 50 for s in scores]
+    # confidence_scores = [(s - min_score) / (max_score - min_score) * 100 if max_score > min_score else 50 for s in scores]
+    if abs(max_score - min_score) < 2:
+        confidence_scores = [50] * len(scores)
+    else:
+        confidence_scores = [(s - min_score) / (max_score - min_score) * 100 for s in scores]
     
     ranked_results = sorted(zip(documents, confidence_scores), key=lambda x: x[1], reverse=True)
     return ranked_results
