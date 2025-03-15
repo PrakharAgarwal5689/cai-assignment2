@@ -184,4 +184,4 @@ if __name__ == "__main__":
             else:
                 st.write("No relevant results found.")
         else:
-            st.write("Invalid query. Please ask a financial-related question.")
+            st.write("Invalid query. Please ask a financial-related question. \n**Confidence Score:** 0%")
